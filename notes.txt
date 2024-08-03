@@ -1,0 +1,13 @@
+// intro
+// quickstart
+https://ai.google.dev/gemini-api/docs/quickstart?lang=node
+
+// api key -> https://ai.google.dev/gemini-api/docs/api-key
+https://aistudio.google.com/app/apikey
+
+// initialize (in guide)
+don't forget to require env. config
+
+// copy first request
+
+// run

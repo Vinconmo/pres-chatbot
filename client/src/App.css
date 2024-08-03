@@ -1,0 +1,183 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+  background: white
+}
+
+.container {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: rgba(180,210,200, 0.5);  /* fallback for old browsers */
+  background: -webkit-linear-gradient(90deg, rgba(180,210,200, 0.5), rgba(220, 230, 248, 0.5));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(90deg, rgba(180,210,200, 0.5), rgba(220, 230, 248, 0.8)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.messages-container {
+  height: 90%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+/* General scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px; /* Set the width of the scrollbar */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background: transparent; /* Or any desired color */
+}
+
+/* Scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background: #ccc; /* Thumb color */
+  border-radius: 4px; /* Round the edges */
+}
+
+/* Hovered thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa; /* Darker color on hover */
+}
+
+.message {
+  max-width: 60%;
+  color: rgb(102, 102, 102);
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  clear: both;
+}
+
+.left  {
+  background: #fff;
+}
+
+.right {
+  background: rgba(180,210,200, 0.7);
+  align-self: flex-end;
+}
+
+.message-time {
+  color: rgb(150, 150, 150);
+  padding-top: 5px;
+  font-size: 0.7rem;
+}
+
+.right .message-text {
+  text-align: right;
+}
+
+.right .message-time {
+  float: right;
+  color: rgba(248, 248, 248, 1)
+}
+
+.input-container {
+  height: 12%;
+  display: flex;
+  flex-direction: row;
+  margin-top: auto;
+  padding: 15px 40px;
+  background: rgba(255, 255, 255, 0.4);
+  box-sizing: border-box;
+}
+
+input {
+  background: rgb(255, 255, 255);
+  align-self: center;
+  width: 96%;
+  height: 100%;
+  margin: 0 10px 0 0;
+  padding: 0 20px;
+  border: 0;
+  border-radius: 15px;
+  outline: none;
+  color: #666;
+  font-size: 1em;
+  font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.send-button {
+  border-width: 0;
+  background: rgb(255, 255, 255);
+  outline: none;
+  width: 10%;
+  display: inline-block;
+  vertical-align: middle;
+  color: rgb(127, 132, 148);
+  border-radius: 15px;
+}
+
+.send-button:hover {
+  background-color: rgb(192, 198, 222);
+  color: rgba(255, 255, 255);
+}
+
+@media only screen and (max-width: 600px) {
+  .send-button {
+    width: 20%;
+    min-width: 10px;
+  }
+
+  .input-container {
+    padding: 15px 20px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+ #root {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+}
+/*
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+} */
