@@ -17,6 +17,7 @@
   "devDependencies": {
     "cz-changelog": "^1.0.1",
     "del": "^6.0.0",
+    "dotenv": "^16.4.5",
     "eslint": "^7.28.0",
     "eslint-plugin-json": "^3.0.0",
     "gulp": "^4.0.2",

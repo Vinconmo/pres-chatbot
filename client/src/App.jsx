@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState} from "react";
+import { v4 as uuidv4 } from "uuid";
 import "./App.css";
 import Message from './Message'
 import apiService from "./apiService";
@@ -29,9 +30,21 @@ function App() {
   }
   async function handleSubmit (event) {
     event.preventDefault()
-    const res = await apiService.postMsg(msg)
-    setMessages(prev => [...prev, res])
+    const tempMsg = {_id: uuidv4(), content: msg, authorId: true, timestamp: Date.now()};
+    setMessages(prev => [...prev, tempMsg])
     setMsg('')
+    const {user, model} = await apiService.postMsg(msg)
+    const errorMsg = {content: 'An error occured, please try again later', timestamp: Date.now(), authorId: false}
+    if (!user) {
+      const filteredMsgs = messages.slice(0, 1)
+      setMessages([filteredMsgs, errorMsg])
+    } else {
+      if (!model) {
+        setMessages(prev => [...prev, errorMsg])
+      } else {
+        setMessages((prev) => [...prev, model]);
+      }
+    }
   }
 
   return (

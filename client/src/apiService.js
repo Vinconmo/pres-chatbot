@@ -10,9 +10,11 @@ const apiService = {
       },
       body: JSON.stringify(message),
     });
-    return res.json();
+    const msg = await res.json()
+    return msg
   },
-  
+
+
   getAll: async () => {
     const res = await fetch(`${BASE_URL}/messages`, {
       method: "GET",

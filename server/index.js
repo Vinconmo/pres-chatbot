@@ -3,7 +3,7 @@
 const Koa = require('koa');
 const app = new Koa();
 const bodyParser = require('koa-bodyparser');
-const cors = require("@koa/cors");
+const cors = require('@koa/cors');
 const router = require('./router.js');
 const {connectDb} = require('./models/index.js');
 
@@ -17,4 +17,4 @@ const port = 3000;
   await connectDb();
   app.listen(port);
   console.log(`Server listening on port ${port}`); // eslint-disable-line no-console
-})()
+})();

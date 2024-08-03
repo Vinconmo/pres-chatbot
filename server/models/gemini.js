@@ -1,22 +1,16 @@
-require("dotenv").config();
-
+// require('dotenv').config({path: './.env'});
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
-//
-console.log(process.env.API_KEY);
+const genAI = new GoogleGenerativeAI(process.env.GEM_API_KEY);
 
-// Access your API key as an environment variable (see "Set up your API key" above)
-const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+const genModel = genAI.getGenerativeModel({
+  model: "gemini-1.5-flash",
+  generationConfig: {
+    maxOutputTokens: 100,
+    temperature: 1,
+  },
+});
 
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-async function run() {
-  const prompt = "Write a story about an AI and magic";
-
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-  console.log(text);
-}
-
-// run();
+module.exports = {
+  genModel,
+};

@@ -16,9 +16,9 @@
     "indent": ["error", 2],
     "keyword-spacing": "error",
     "linebreak-style": "error",
-    "quotes": ["error","single"],
+    // "quotes": ["error","single"],
     "semi": "error",
-    "space-before-blocks": "error",
-    "space-before-function-paren": "error"
+    // "space-before-blocks": "error",
+    // "space-before-function-paren": "error"
   }
 }
