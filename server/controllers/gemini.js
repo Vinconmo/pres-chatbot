@@ -1,12 +1,11 @@
 const Message = require("../models/message");
-const {genModel} = require("../models/gemini")
+const { genModel } = require("../models/gemini");
 
 let chat;
-
 (async () => {
   let history = {
-    user: [],
-    model: [],
+    user: [{text: ''}],
+    model: [{text: ''}],
   };
 
   const user = await Message.find({ authorId: true });
@@ -34,11 +33,16 @@ let chat;
 
 async function getAnswer(msg) {
   try {
-    const message = `Please answer my message. Send you answer always in plain text without any formatting, including but not exclusive to bold or italics. My message: ${msg}`;
-    // !
+    const message = `Please answer my message with a joke. Send you answer always
+    in plain text without any formatting, including but not exclusive
+    to bold or italics. My message: ${msg}`;
+
+    // comment out the following use cases that you don't want to use
+    // ! for chat
     const result = await chat.sendMessage(message);
+    // ! for single messages
     // const result = await genModel.generateContent(message);
-    // !
+
 
     const response = await result.response;
     const text = response.text();
