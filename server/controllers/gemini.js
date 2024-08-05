@@ -33,7 +33,7 @@ let chat;
 
 async function getAnswer(msg) {
   try {
-    const message = `Please answer my message with a joke. Send you answer always
+    const message = `Please answer my message in a funny way. Send you answer always
     in plain text without any formatting, including but not exclusive
     to bold or italics. My message: ${msg}`;
 
